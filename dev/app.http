@@ -1,0 +1,9 @@
+# カテゴリツリー取得
+GET http://localhost:8000/api/category_tree
+
+###
+
+# SNS 一覧取得
+GET http://localhost:8000/api/sns
+
+

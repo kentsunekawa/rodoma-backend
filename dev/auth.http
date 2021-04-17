@@ -1,0 +1,55 @@
+POST http://localhost:8000/api/register
+Content-Type: application/json
+
+{
+    "name": "Ken Tsunekawa",
+    "email": "tsunekawaken@gmail.com",
+    "password": "00000000",
+    "password_confirmation": "00000000"
+}
+
+### ユーザー詳細取得
+GET http://localhost:8000/api/users/1
+
+
+### ログイン
+
+POST http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+    "email": "tsunekawaken@gmail.com",
+    "password": "00000000"
+}
+
+
+###
+GET http://localhost:8000/api/home
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxNTgwMTIzMSwiZXhwIjoxNjE1ODE5MjMxLCJuYmYiOjE2MTU4MDEyMzEsImp0aSI6Ik41RUlQdlhhcEI2NWdPREMiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.eZdOlq3Sl8euu3WUIuefpRHCixrnIN8ZZu63t2F1zYE
+
+
+### パスワードリセットメールリクエスト
+POST http://localhost:8000/api/password/email
+Content-Type: application/json
+
+{
+    "email": "tsunekawaken@gmail.com"
+}
+
+###
+POST http://localhost:8000/api/password/reset/0f245349ccc6c1b0faab6f61f6468a3c2835a16828684ecc484e6c9f66939681
+Content-Type: application/json
+
+{
+    "token": "0f245349ccc6c1b0faab6f61f6468a3c2835a16828684ecc484e6c9f66939681",
+    "email": "tsunekawaken@gmail.com",
+    "password": "aaaaaaaa",
+    "password_confirmation": "aaaaaaaa"
+}
+
+
+
+###
+GET http://localhost:8000/api/email/verify/7?expires=1615019899&signature=b6a09cf7a34fed62e4144ac59d1544a0897aed9826c9f065a4e60e157e3bfcdb
+
+http://localhost:3000/verify?queryUrl=http%3A%2F%2Flocalhost%3A8000%2Fapi%2Femail%2Fverify%2F1%3Fexpires%3D1615382849%26signature%3Db3d35d01a2d30c600e4ef1a0532dc2622517e9aea18c7105b8b4f7abf332a4ac

@@ -1,0 +1,4 @@
+PUT http://localhost:8000/api/posts/1/likes/101
+
+### like してるかどうか
+GET http://localhost:8000/api/posts/1/likes/101
