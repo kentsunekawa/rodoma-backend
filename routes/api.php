@@ -13,13 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::group(['middleware' => 'api'], function() {
     Route::post('/register', 'Auth\RegisterController@register');
     Route::post('/login', 'Auth\LoginController@login');
+    Route::get('/refresh', 'Auth\LoginController@refresh');
     Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
     Route::post('/password/reset/{token}', 'Auth\ResetPasswordController@reset');
     Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
@@ -50,7 +47,9 @@ Route::group(['middleware' => 'api'], function() {
 
 
     Route::group(['middleware' => ['jwt.auth']], function() {
-       Route::put('/users/{userId}', 'UserController@update');
-       Route::put('/users/{userId}/icon', 'UserController@updateIcon');
+        Route::put('/users/{userId}', 'UserController@update');
+        Route::put('/users/{userId}/icon', 'UserController@updateIcon');
+        Route::get('/home', 'AppController@home');
+        Route::get('/user', 'Auth\LoginController@getUserByToken');
     });
 });
