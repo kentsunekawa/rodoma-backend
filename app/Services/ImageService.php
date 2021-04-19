@@ -14,6 +14,6 @@ class ImageService {
 
         $disk->put($fileName, $decodedImage, 'public');
 
-        return $disk->exists($fileName) ? config('app.image_url') . $fileName : false;
+        return $disk->exists($fileName) ? config('app.image_url') . '/' . $fileName : false;
     }
 }
