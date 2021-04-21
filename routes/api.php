@@ -24,8 +24,6 @@ Route::group(['middleware' => 'api'], function() {
 
     Route::get('/category_tree', 'AppController@categoryTree');
     Route::get('/sns', 'AppController@sns');
-    Route::post('/images', 'ImageController@upload');
-
     Route::resource('/users', 'UserController', ['except' => ['create', 'edit', 'update']]);
     Route::get('/users/{userId}/posts', 'PostController@postsCreatedBySpecificUser');
     Route::get('/users/{userId}/posts/all', 'PostController@allPostsCreatedBySpecificUser');
