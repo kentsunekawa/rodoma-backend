@@ -7,7 +7,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use App\Notifications\CustomPasswordReset;
-use App\Notifications\VerifyEmail;
+// use App\Notifications\VerifyEmail;
+use Illuminate\Auth\Notifications\VerifyEmail;
 use App\Collections\UserCollection;
 
 class User extends Authenticatable implements JWTSubject, MustVerifyEmail
