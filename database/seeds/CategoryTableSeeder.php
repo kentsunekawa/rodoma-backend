@@ -13,22 +13,31 @@ class CategoryTableSeeder extends Seeder
     {
         $categories = [
             [
-                'name' => 'category1'
+                'name' => '設定なし'
             ],
             [
-                'name' => 'category2'
+                'name' => 'IT・プログラミング'
             ],
             [
-                'name' => 'category3'
+                'name' => 'デザイン・アート'
             ],
             [
-                'name' => 'category4'
+                'name' => '金融'
             ],
             [
-                'name' => 'category5'
+                'name' => '語学'
             ],
             [
-                'name' => 'category6'
+                'name' => 'ビジネススキル'
+            ],
+            [
+                'name' => '企画・マーケティング'
+            ],
+            [
+                'name' => '健康・スポーツ'
+            ],
+            [
+                'name' => '趣味・その他'
             ],
         ];
         foreach ($categories as $category) {
