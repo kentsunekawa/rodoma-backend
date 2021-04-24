@@ -76,22 +76,25 @@ class LoginController extends Controller
     }
 
     protected function respondWithToken($token) {
-        $user = auth()->user();
-        if($user !== null) {
-            $user = [
-                'id' => $user['id'],
-                'name' => $user['name'],
-                'icon_url' => $user['icon_url'],
-            ];
-        }
         return new JsonResponse([
             'status' => 'success_signin',
-            'data' => [
-                'user' => $user,
-                'token' => $token,
-                'expires_in' => auth()->factory()->getTTL() * 60,
-            ],
         ]);
+        // $user = auth()->user();
+        // if($user !== null) {
+        //     $user = [
+        //         'id' => $user['id'],
+        //         'name' => $user['name'],
+        //         'icon_url' => $user['icon_url'],
+        //     ];
+        // }
+        // return new JsonResponse([
+        //     'status' => 'success_signin',
+        //     'data' => [
+        //         'user' => $user,
+        //         'token' => $token,
+        //         'expires_in' => auth()->factory()->getTTL() * 60,
+        //     ],
+        // ]);
     }
 
     public function getUserByToken() {
