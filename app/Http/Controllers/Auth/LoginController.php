@@ -77,7 +77,7 @@ class LoginController extends Controller
 
     protected function respondWithToken($token) {
         $user = auth()->user();
-        if($user) {
+        if($user !== null) {
             $user = [
                 'id' => $user['id'],
                 'name' => $user['name'],
