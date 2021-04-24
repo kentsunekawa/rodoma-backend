@@ -66,18 +66,21 @@ class LoginController extends Controller
     }
 
     public function refresh() {
-        try {
-            return $this->respondWithToken(auth()->refresh());
-        } catch (\Tymon\JWTAuth\Exceptions\JWTException $e) {
-            return new JsonResponse([
-                'status' => 'fail_refresh_token',
-            ], 401);
-        }
+        return new JsonResponse([
+            'status' => 'testtest',
+        ]);
+        // try {
+        //     return $this->respondWithToken(auth()->refresh());
+        // } catch (\Tymon\JWTAuth\Exceptions\JWTException $e) {
+        //     return new JsonResponse([
+        //         'status' => 'fail_refresh_token',
+        //     ], 401);
+        // }
     }
 
     protected function respondWithToken($token) {
         return new JsonResponse([
-            'status' => 'success_signin',
+            'status' => 'testtest',
         ]);
         // $user = auth()->user();
         // if($user !== null) {
