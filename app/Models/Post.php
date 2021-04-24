@@ -85,12 +85,17 @@ class Post extends Model
     }
 
     public function scopeSearched($query, $searchQuery) {
-        return $query
+        $query
             ->matchReleaseStatus($searchQuery['status'])
             ->matchCategory($searchQuery['category_id'])
             ->matchSpecialty($searchQuery['specialty_id'])
             ->matchKeyword($searchQuery['keyword'])
             ->orderBy($searchQuery['sort'], 'desc');
+        if($searchQuery['sort'] !== 'id') {
+            return $query->orderBy('id', 'desc');
+        } else {
+            return $query;
+        }
     }
 
     public function scopeMatchReleaseStatus($query, $status) {
