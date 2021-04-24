@@ -66,38 +66,32 @@ class LoginController extends Controller
     }
 
     public function refresh() {
-        return new JsonResponse([
-            'status' => 'testtest',
-        ]);
-        // try {
-        //     return $this->respondWithToken(auth()->refresh());
-        // } catch (\Tymon\JWTAuth\Exceptions\JWTException $e) {
-        //     return new JsonResponse([
-        //         'status' => 'fail_refresh_token',
-        //     ], 401);
-        // }
+        try {
+            return $this->respondWithToken(auth()->refresh());
+        } catch (\Tymon\JWTAuth\Exceptions\JWTException $e) {
+            return new JsonResponse([
+                'status' => 'fail_refresh_token',
+            ], 401);
+        }
     }
 
     protected function respondWithToken($token) {
+        $user = auth()->user();
+        if($user) {
+            $user = [
+                'id' => $user['id'],
+                'name' => $user['name'],
+                'icon_url' => $user['icon_url'],
+            ];
+        }
         return new JsonResponse([
-            'status' => 'testtest',
+            'status' => 'success_signin',
+            'data' => [
+                'user' => $user,
+                'token' => $token,
+                'expires_in' => auth()->factory()->getTTL() * 60,
+            ],
         ]);
-        // $user = auth()->user();
-        // if($user !== null) {
-        //     $user = [
-        //         'id' => $user['id'],
-        //         'name' => $user['name'],
-        //         'icon_url' => $user['icon_url'],
-        //     ];
-        // }
-        // return new JsonResponse([
-        //     'status' => 'success_signin',
-        //     'data' => [
-        //         'user' => $user,
-        //         'token' => $token,
-        //         'expires_in' => auth()->factory()->getTTL() * 60,
-        //     ],
-        // ]);
     }
 
     public function getUserByToken() {
