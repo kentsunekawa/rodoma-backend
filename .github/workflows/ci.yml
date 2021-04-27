@@ -35,6 +35,7 @@ jobs:
         run: vendor/bin/phpunit
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: laravel-tests
     runs-on: ubuntu-latest
     steps:
       - run: echo 'will deploy'
