@@ -17,14 +17,17 @@ use Illuminate\Support\Str;
 |
 */
 
+
 $factory->define(User::class, function (Faker $faker) {
+    $date = $faker->dateTimeBetween('-2 years', '-1 day');
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->email,
-        'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'email_verified_at' => $date,
+        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // pa$dated
+        'icon_url' => config('app.image_url') . '/img/user/icon/user_' . Str::uuid() . '.jpg',
         'remember_token' => Str::random(10),
-        'created_at' => now(),
-        'updated_at' => now(),
+        'created_at' => $date,
+        'updated_at' => $date,
     ];
 });

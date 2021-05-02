@@ -20,15 +20,15 @@ class RelationTableSeeder extends Seeder
         // ];
 
         for($i = 0; $i < 100; $i++) {
-            if($i + 1 !== 101) {
+            if($i + 1 !== 1) {
                 Relation::create([
-                    'follower_id' => 101,
+                    'follower_id' => 1,
                     'followed_id' => $i + 1,
                 ]);
                 if($i % 2 === 0) {
                     Relation::create([
                         'follower_id' => $i + 1,
-                        'followed_id' => 101,
+                        'followed_id' => 1,
                     ]);
                 }
             }
