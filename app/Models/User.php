@@ -111,12 +111,17 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail
     }
 
     public function scopeSearchedUsers($query, $category_id, $specialty_id, $keyword, $sort) {
-        return $query->with('profile')
+        $query->with('profile')
             ->withCount('followers')
             ->matchCategoryUser($category_id)
             ->matchSpecialtyUser($specialty_id)
             ->matchKeyword($keyword)
             ->orderBy($sort, 'desc');
+        if($sort !== 'id') {
+            return $query->orderBy('id', 'desc');
+        } else {
+            return $query;
+        }
     }
 
     public function scopeMatchCategoryUser($query, $category_id) {
