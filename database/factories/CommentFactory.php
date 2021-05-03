@@ -7,10 +7,10 @@ use Faker\Generator as Faker;
 
 $factory->define(Comment::class, function (Faker $faker) {
     return [
-        'user_id' => $faker->numberBetween(99, 101),
+        'user_id' => $faker->numberBetween(1, 5),
         'post_id' => 1,
-        'comment' => $faker->sentence(rand(3,10)),
-        'created_at' => new DateTime('now'),
-        'updated_at' => new DateTime('now'),
+        'comment' => '[dummy message] ' . $faker->sentence(rand(3,10)),
+        'created_at' => $faker->dateTimeBetween('-10 day', '-1 day'),
+        'updated_at' => $faker->dateTimeBetween('-10 day', '-1 day'),
     ];
 });
