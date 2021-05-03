@@ -1,78 +1,115 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# rodoma
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+![cover](https://raw.githubusercontent.com/kentsunekawa/rodoma-frontend/main/doc/img/cover.png)
 
-## About Laravel
+## 概要
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+本リポジトリは、WEB サービス「rodoma（ロドマ）」のバックエンド環境のリポジトリです。
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**各リポジトリ**
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   フロントエンド [rodoma-frontend](https://github.com/kentsunekawa/rodoma-frontend)
+-   バックエンド [rodoma-backend](https://github.com/kentsunekawa/rodoma-backend)（※ 本リポジトリ）
+-   開発環境（Docker Compose）[rodoma-project](https://github.com/kentsunekawa/rodoma-project)
 
-## Learning Laravel
+## サービス紹介
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**挑戦する人を応援する、学習ロードマップのシェアサービス**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+rodoma（ロドマ）は、新しいことを勉強しようとしているけれど、どう進めたらいいかわからない人のための、学習のロードマップシェアサービスです。
 
-## Laravel Sponsors
+#### ユーザーメリット（学ぶ人）
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+これから学ぼうとしている人は、先輩や現役の人たちが公開する学習方法やロードマップを見ることができ、またそれに紐づく教材（書籍、記事、動画）にアクセスすることができます。
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+#### ユーザーメリット（投稿する人）
 
-## Contributing
+ロードマップを公開する人は、学ぶ人を支援するという名目だけでなく、  
+自分が書いたブログの記事や運営する YouTube チャンネル、書籍を出しているならその販売ページ、オンラインサロンを運営しているならその WEB サイトの URL を記載することで、販売チャネルの一つとしても活用できます。
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+また、フォロー機能やコメント機能といった SNS としての機能も備えているので、人脈を広げるきっかけを作ることも可能です。  
+rodoma は見る人にとっても投稿する人にとっても、キャリアを形成する上でメリットがある、そんなサービスです。
 
-## Code of Conduct
+## 主な機能一覧
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+| 分類                 | 機能                                                                                 |
+| -------------------- | ------------------------------------------------------------------------------------ |
+| ユーザー             | 新規登録、サインイン、サインアウト、ユーザー情報編集、メール認証、パスワードリセット |
+| 投稿                 | 閲覧、新規作成、保存、公開、限定公開、アイキャッチ画像設定                           |
+| 投稿検索・ソート     | キーワードで検索、カテゴリで検索、ソート（Like 数 / Mark 数 / 作成日）               |
+| ユーザー検索・ソート | キーワードで検索、カテゴリで検索、ソート（フォロワー数 / 登録日）                    |
+| コメント             | コメント作成、コメント削除                                                           |
+| Like（ライク）       | 良いと思った投稿に Like する、Like の解除                                            |
+| Mark（マーク）       | 後で見たい投稿に Mark する、Mark の解除                                              |
+| フォロー             | フォロー、フォロー解除                                                               |
+| その他               | 無限スクロール、ライトモード / ダークモード                                          |
 
-## Security Vulnerabilities
+## 使用技術・アーキテクチャー
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 概要
 
-## License
+#### SPA + API
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+サービスのコンセプトにある通り新しいことに挑戦する人には、画面遷移やサーバーからのレスポンス待ちといったストレスが少しでも少ない利用体験を提供する必要性があることから、フロントは SPA で構築。
+それに伴ってバックエンドは、フロントからのリクエストに対して必要なだけの情報を随時返す API サーバーとして構築しました。
+
+### フロントエンド
+
+※ 本リポジトリはバックエンドのリポジトリです。フロントエンドのリポジトリは下記リンクから。  
+[rodoma-frontend](https://github.com/kentsunekawa/rodoma-frontend)
+
+メインの言語は、API と連携することでデータの受け渡しが多く発生することから型宣言による安全性という恩恵を受ける為に TypeScript を採用。
+また TypeScript との相性という面から Vue.js ではなく React （とそのエコシステム）を採用。  
+スタイリングに関しては 既存の UI ライブラリは導入せず、styled-components でオリジナルのコンポーネントを開発しました。  
+これは、求められるデザインの要件上、既存の UI ライブラリ（Material UI など）では結局大きなカスタマイズをする必要があり、オリジナルで開発した方が開発にも維持にもコストがかからないと判断できるためです。  
+コンポーネントの管理には Storybook を採用しました。
+
+使用技術一覧を下記に示す。
+
+| 分類                 | 名称                   |
+| -------------------- | ---------------------- |
+| 言語                 | TypeScript 4.1.2       |
+| ライブラリ           | React 17.0.1           |
+| 状態管理             | Redux（Redux Toolkit） |
+| スタイリング         | styled-components      |
+| http クライアント    | axios                  |
+| アニメーション       | GSAP                   |
+| コンポーネント管理   | Storybook              |
+| バリデーション       | Vest                   |
+| テストフレームワーク | Jest                   |
+| リンター             | ESlint                 |
+| コードフォーマッター | Prettier               |
+
+#### Storybook
+
+コンポーネントは Storybook で管理。
+
+![storybook](https://raw.githubusercontent.com/kentsunekawa/rodoma-frontend/main/doc/img/storybook.jpg)
+
+### バックエンド
+
+バックエンドを構築する主な言語としては、PHP、Ruby、Python などが挙げられるが、  
+開発期間と開発開始時点での理解度とそこからの学習コストなどを鑑みて、PHP を採用。  
+フレームワークにおいては PHP のフレームワークの中でも Laravel が最もシェア率が高く、ドキュメントの豊富さと将来性を考慮し採用しました。  
+使用技術一覧を下記に示す。
+
+| 分類           | 名称         |
+| -------------- | ------------ |
+| 言語           | PHP 7.4.15   |
+| フレームワーク | Laravel 6.20 |
+| データベース   | MySQL 8.0.23 |
+
+### インフラストラクチャー
+
+#### 構成図
+
+![storybook](https://raw.githubusercontent.com/kentsunekawa/rodoma-frontend/main/doc/img/network.jpg)
+
+| 分類                     | 名称                    |
+| ------------------------ | ----------------------- |
+| 本番環境                 | Heroku                  |
+| コンテナ（開発環境のみ） | Docker / Docker Compose |
+| バージョン管理           | Git / GitHub            |
+| CI/CD                    | GitHub Actions          |
+| 画像配信                 | AWS S3                  |
+| リバースプロキシ         | Cloudflare              |
