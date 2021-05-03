@@ -24,10 +24,13 @@ $factory->define(User::class, function (Faker $faker) {
         'name' => $faker->name,
         'email' => $faker->unique()->email,
         'email_verified_at' => $date,
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // pa$dated
+        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'icon_url' => config('app.image_url') . '/img/user/icon/user_' . Str::uuid() . '.jpg',
         'remember_token' => Str::random(10),
         'created_at' => $date,
         'updated_at' => $date,
     ];
 });
+
+
+
